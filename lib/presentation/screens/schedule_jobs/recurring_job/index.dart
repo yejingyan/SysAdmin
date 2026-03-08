@@ -61,7 +61,7 @@ class _RecurringJobScreenState extends State<RecurringJobScreen> {
     return showDialog<bool>(
       context: context,
       builder: (BuildContext context) => DeleteConfirmationDialog(
-          title: 'Delete Job?',
+          title: '删除任务?',
           content: const Text('Are you sure you want to delete this Cron Job?'),
           onConfirm: () async {
             // Perform the delete operation here
@@ -185,12 +185,12 @@ class _RecurringJobScreenState extends State<RecurringJobScreen> {
                     ),
                   ],
                   tables: <TableData>[
-                    TableData(heading: "Details", rows: <TableRowData>[
+                    TableData(heading: "详情", rows: <TableRowData>[
                       TableRowData(label: "Cron Expression", value: job.expression),
                       TableRowData(label: "Human Readable", value: scheduleDisplay),
                       TableRowData(label: "Full Command", value: job.command),
                       TableRowData(
-                          label: "Description",
+                          label: "描述",
                           value: job.description?.trim() == '' ? 'No description provided' : job.description!
                       )
                     ]),

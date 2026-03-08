@@ -87,7 +87,7 @@ class _ScheduleJobScreenState extends ConsumerState<ScheduleJobScreen> with Sing
       appBar: AppBar(
         elevation: 1.0,
         shape: Border.all(style: BorderStyle.none),
-        title: const Text("Schedule Jobs"),
+        title: const Text("计划任务"),
         bottom: TabBar(
           controller: tabController,
           dividerHeight: 0,

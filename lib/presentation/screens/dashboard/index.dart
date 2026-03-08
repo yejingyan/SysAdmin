@@ -241,7 +241,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Dashboard"),
+        title: const Text("仪表盘"),
         elevation: 1.0,
         backgroundColor: Colors.transparent,
       ),
@@ -414,7 +414,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
                         SizedBox(
                           width: 120,
                           child: Text(
-                            "Uptime",
+                            "运行时间",
                             style: TextStyle(
                               color: theme.colorScheme.onSurfaceVariant,
                             ),
@@ -442,7 +442,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
             OverviewContainer(
                 title: "System Usage",
                 label: Label(
-                    label: "Details",
+                    label: "详情",
                     onTap: () {
                       // TODO: Implement the System Monitor Screen and link it here and in AppDrawer
                       Navigator.push(
@@ -458,7 +458,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
 
                   // CPU Usage
                   ResourceUsageCard(
-                      title: 'CPU',
+                      title: '处理器',
                       usagePercentage: systemResources.cpuUsage,
                       usedValue: systemResources.cpuUsage,
                       totalValue: 100,
@@ -469,7 +469,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
 
                   // RAM Usage
                   ResourceUsageCard(
-                      title: 'RAM',
+                      title: '内存',
                       usagePercentage: systemResources.ramUsage,
                       usedValue: systemResources.usedRam / 1024,
                       totalValue: systemResources.totalRam / 1024,
@@ -478,7 +478,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
 
                   // Swap Usage
                   ResourceUsageCard(
-                      title: 'SWAP',
+                      title: '交换空间',
                       usagePercentage: systemResources.swapUsage,
                       usedValue: systemResources.usedSwap / 1024,
                       totalValue: systemResources.totalSwap / 1024,

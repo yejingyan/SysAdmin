@@ -150,7 +150,7 @@ class _AddConnectionFormState extends ConsumerState<AddConnectionForm> {
         return StatefulBuilder(
           builder: (context, setDialogState) {
             return AlertDialog(
-              title: const Text('Private Key Passphrase'),
+              title: const Text('私钥密码'),
               content: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
@@ -220,7 +220,7 @@ class _AddConnectionFormState extends ConsumerState<AddConnectionForm> {
                           // Use Navigator.pop with result to avoid the assertion error
                           Navigator.pop(context, false);
                         },
-                  child: Text('Cancel', style: TextStyle(color: Theme.of(context).colorScheme.error)),
+                  child: Text('取消', style: TextStyle(color: Theme.of(context).colorScheme.error)),
                 ),
 
                 // Decrypt button
@@ -551,7 +551,7 @@ class _AddConnectionFormState extends ConsumerState<AddConnectionForm> {
     final theme = Theme.of(context);
 
     return IosScaffold(
-      title: "${widget.connection != null ? 'Update' : 'Add'} Connection",
+      title: "${widget.connection != null ? '更新' : 'Add'} Connection",
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(12.0),
@@ -587,7 +587,7 @@ class _AddConnectionFormState extends ConsumerState<AddConnectionForm> {
                 controller: usernameController,
                 keyboardType: TextInputType.text,
                 decoration: InputDecoration(
-                  labelText: "Username",
+                  labelText: "用户名",
                   border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
                 ),
               ),
@@ -602,7 +602,7 @@ class _AddConnectionFormState extends ConsumerState<AddConnectionForm> {
                       controller: hostController,
                       keyboardType: TextInputType.name,
                       decoration: InputDecoration(
-                        labelText: "Host",
+                        labelText: "主机",
                         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
                       ),
                     ),
@@ -618,7 +618,7 @@ class _AddConnectionFormState extends ConsumerState<AddConnectionForm> {
                       keyboardType: const TextInputType.numberWithOptions(decimal: false, signed: false),
                       maxLength: 5,
                       decoration: InputDecoration(
-                        labelText: "Port",
+                        labelText: "端口",
                         counterText: "",
                         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
                       ),
@@ -634,7 +634,7 @@ class _AddConnectionFormState extends ConsumerState<AddConnectionForm> {
                 children: const {
                   true: Padding(
                     padding: EdgeInsets.all(8.0),
-                    child: Text('Password'),
+                    child: Text('密码'),
                   ),
                   false: Padding(
                     padding: EdgeInsets.all(8.0),
@@ -659,7 +659,7 @@ class _AddConnectionFormState extends ConsumerState<AddConnectionForm> {
                     obscureText: _isPasswordVisible,
                     keyboardType: TextInputType.visiblePassword,
                     decoration: InputDecoration(
-                        labelText: "Password",
+                        labelText: "密码",
                         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
                         suffixIcon: IconButton(
                             onPressed: () => setState(() => _isPasswordVisible = !_isPasswordVisible),
@@ -716,7 +716,7 @@ class _AddConnectionFormState extends ConsumerState<AddConnectionForm> {
                         )
                       : _isSaving
                           ? const Text("Saving...")
-                          : const Text("Save"),
+                          : const Text("保存"),
                 ),
               ),
             ],

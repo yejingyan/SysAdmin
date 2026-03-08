@@ -52,7 +52,7 @@ class _SystemInformationScreenState extends ConsumerState<SystemInformationScree
                     children: <Widget>[
                       _buildInfoRow(context, "Model", systemInfo.getValueOrDefault(systemInfo.model)),
                       _buildInfoRow(context, "Machine ID", systemInfo.getValueOrDefault(systemInfo.machineId)),
-                      _buildInfoRow(context, "Uptime", Util.formatTime(systemInfo.uptime ?? 0)),
+                      _buildInfoRow(context, "运行时间", Util.formatTime(systemInfo.uptime ?? 0)),
                       _buildInfoRow(context, "Type", systemInfo.getValueOrDefault(systemInfo.type)),
                     ],
                   ),
@@ -64,7 +64,7 @@ class _SystemInformationScreenState extends ConsumerState<SystemInformationScree
                     title: "Operating System Information",
                     children: <Widget>[
                       _buildInfoRow(context, "OS", systemInfo.getValueOrDefault(systemInfo.name)),
-                      _buildInfoRow(context, "Version", systemInfo.getValueOrDefault(systemInfo.version)),
+                      _buildInfoRow(context, "版本", systemInfo.getValueOrDefault(systemInfo.version)),
                       _buildInfoRow(context, "Hostname", systemInfo.getValueOrDefault(systemInfo.hostname)),
                       _buildInfoRow(context, "Kernel", systemInfo.getValueOrDefault(systemInfo.kernel)),
                       _buildInfoRow(context, "Last Boot", systemInfo.getValueOrDefault(systemInfo.lastBootTime)),
@@ -89,7 +89,7 @@ class _SystemInformationScreenState extends ConsumerState<SystemInformationScree
                   OverviewContainer(
                     title: "CPU Information",
                     children: <Widget>[
-                      _buildInfoRow(context, "CPU", systemInfo.getValueOrDefault(systemInfo.cpuModel)),
+                      _buildInfoRow(context, "处理器", systemInfo.getValueOrDefault(systemInfo.cpuModel)),
                       _buildInfoRow(context, "Architecture", systemInfo.getValueOrDefault(systemInfo.cpuArchitecture)),
                       _buildInfoRow(context, "Cores", "${systemResources.cpuCount}"),
                       _buildInfoRow(context, "Clock Speed", "${systemInfo.cpuSpeed?.toStringAsFixed(2) ?? "0"} GHz"),

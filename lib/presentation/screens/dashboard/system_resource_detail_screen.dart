@@ -111,7 +111,7 @@ class _SystemResourceDetailsScreenState extends ConsumerState<SystemResourceDeta
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('System Resources Details'),
+        title: const Text('系统资源详情'),
         elevation: 1.0,
       ),
       body: ListView(
@@ -120,12 +120,12 @@ class _SystemResourceDetailsScreenState extends ConsumerState<SystemResourceDeta
         children: [
           // CPU Section
           _buildResourceSection(
-            title: 'CPU Usage',
+            title: 'CPU使用率',
             value: '${systemResources.cpuUsage.toStringAsFixed(1)}%',
             chartData: _cpuHistory,
             color: Colors.blue,
             processes: processes.cpuProcesses,
-            resourceType: 'CPU',
+            resourceType: '处理器',
             theme: theme,
           ),
 
@@ -133,7 +133,7 @@ class _SystemResourceDetailsScreenState extends ConsumerState<SystemResourceDeta
 
           // RAM Section
           _buildResourceSection(
-            title: 'Memory Usage',
+            title: '内存使用率',
             value:
                 '${systemResources.ramUsage.toStringAsFixed(1)}% (${(systemResources.usedRam / 1024).toStringAsFixed(1)}GB / ${(systemResources.totalRam / 1024).toStringAsFixed(1)}GB)',
             chartData: _memoryHistory,
@@ -147,7 +147,7 @@ class _SystemResourceDetailsScreenState extends ConsumerState<SystemResourceDeta
 
           // Swap Section
           _buildResourceSection(
-            title: 'Swap Usage',
+            title: '交换空间使用率',
             value:
                 '${systemResources.swapUsage.toStringAsFixed(1)}% (${(systemResources.usedSwap / 1024).toStringAsFixed(1)}GB / ${(systemResources.totalSwap / 1024).toStringAsFixed(1)}GB)',
             chartData: _swapHistory,
@@ -336,7 +336,7 @@ class _SystemResourceDetailsScreenState extends ConsumerState<SystemResourceDeta
           children: [
             _tableHeader('Process', theme),
             _tableHeader('PID', theme),
-            _tableHeader(resourceType == 'CPU' ? 'CPU %' : 'Memory MB', theme),
+            _tableHeader(resourceType == '处理器' ? 'CPU百分比' : '内存(MB)', theme),
           ],
         ),
         ...processes.map((process) {
@@ -352,7 +352,7 @@ class _SystemResourceDetailsScreenState extends ConsumerState<SystemResourceDeta
               ),
               Text(process.pid.toString(), style: const TextStyle(fontSize: 13)),
               Text(
-                resourceType == 'CPU'
+                resourceType == '处理器'
                     ? '${process.cpuPercent.toStringAsFixed(1)}%'
                     : (resourceType == 'Memory'
                         ? '${process.memoryMB.toStringAsFixed(1)} MB'
@@ -361,7 +361,7 @@ class _SystemResourceDetailsScreenState extends ConsumerState<SystemResourceDeta
                   fontSize: 13,
                   fontWeight: FontWeight.w500,
                   color: _getColorBasedOnUsage(
-                      resourceType == 'CPU'
+                      resourceType == '处理器'
                           ? process.cpuPercent
                           : (resourceType == 'Memory' ? process.memoryMB : process.swapMB),
                       resourceType),
@@ -389,7 +389,7 @@ class _SystemResourceDetailsScreenState extends ConsumerState<SystemResourceDeta
   }
 
   Color _getColorBasedOnUsage(double value, String type) {
-    if (type == 'CPU') {
+    if (type == '处理器') {
       if (value > 80) return Colors.red;
       if (value > 50) return Theme.of(context).primaryColor;
       return Colors.green;

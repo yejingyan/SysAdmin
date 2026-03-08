@@ -191,7 +191,7 @@ class _AboutScreenState extends State<AboutScreen> with SingleTickerProviderStat
           TextButton(
             onPressed: () => Navigator.pop(context),
             child: Text(
-              'Close',
+              '关闭',
               style: TextStyle(color: Theme.of(context).colorScheme.error),
             ),
           ),
@@ -215,7 +215,7 @@ class _AboutScreenState extends State<AboutScreen> with SingleTickerProviderStat
     final theme = Theme.of(context);
 
     return IosScaffold(
-      title: 'About',
+      title: '关于',
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
@@ -243,7 +243,7 @@ class _AboutScreenState extends State<AboutScreen> with SingleTickerProviderStat
                     const SizedBox(height: 16),
 
                     // App Name
-                    Text('SysAdmin', style: theme.textTheme.headlineMedium),
+                    Text('系统管理员', style: theme.textTheme.headlineMedium),
 
                     const SizedBox(height: 8),
 
@@ -283,13 +283,13 @@ class _AboutScreenState extends State<AboutScreen> with SingleTickerProviderStat
                   spacing: 8,
                   children: [
                     _buildGlassPill(
-                      title: 'Feedback',
+                      title: '反馈',
                       icon: Icons.feedback_outlined,
                       onTap: () => _launchUrl('https://github.com/prathameshkhade/sysadmin/issues'),
                     ),
 
                     _buildGlassPill(
-                      title: 'License',
+                      title: '许可证',
                       icon: Icons.gavel_outlined,
                       onTap: () => _showLicenseDialog(context),
                     ),
@@ -304,14 +304,14 @@ class _AboutScreenState extends State<AboutScreen> with SingleTickerProviderStat
                 child: Row(
                   children: [
                     _buildGlassPill(
-                      title: 'Discussions',
+                      title: '讨论',
                       icon: Icons.forum_outlined,
                       onTap: () =>
                           _launchUrl('https://github.com/prathameshkhade/sysadmin/discussions'),
                     ),
                     const SizedBox(width: 8),
                     _buildGlassPill(
-                      title: 'Wiki',
+                      title: '维基',
                       icon: Icons.menu_book_outlined,
                       onTap: () => _launchUrl('https://github.com/prathameshkhade/sysadmin/wiki'),
                     ),
@@ -380,17 +380,17 @@ class _AboutScreenState extends State<AboutScreen> with SingleTickerProviderStat
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     _buildDonationOption(
-                      // title: 'Buy Me a Coffee',
+                      // title: '请我喝咖啡',
                       asset: 'assets/about/buymeacoffee.png',
                       onTap: () => _launchUrl('https://buymeacoffee.com/prathameshkhade'),
                     ),
                     _buildDonationOption(
-                      // title: 'GitHub Sponsor',
+                      // title: 'GitHub赞助',
                       asset: 'assets/about/github-sponsor.png',
                       onTap: () => _launchUrl('https://github.com/sponsors/prathameshkhade'),
                     ),
                     _buildDonationOption(
-                      // title: "Donate via UPI",
+                      // title: "通过UPI捐赠",
                       asset: 'assets/about/upi.png',
                       onTap: () => Navigator.push(
                         context,

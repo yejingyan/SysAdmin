@@ -178,7 +178,7 @@ class _UpiState extends State<Upi> {
     final commonTitleColor = theme.colorScheme.inverseSurface.useOpacity(0.9);
 
     return IosScaffold(
-        title: 'Donate via UPI',
+        title: '通过UPI捐赠',
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 18),
@@ -286,7 +286,7 @@ class _UpiState extends State<Upi> {
                       TextButton.icon(
                         onPressed: _copyUpiId,
                         icon: Icon(Icons.copy, size: 16, color: theme.colorScheme.primary),
-                        label: Text('Copy', style: TextStyle(color: theme.colorScheme.primary)),
+                        label: Text('复制', style: TextStyle(color: theme.colorScheme.primary)),
                         style: TextButton.styleFrom(
                           minimumSize: const Size(60, 32),
                           padding: const EdgeInsets.symmetric(horizontal: 8),

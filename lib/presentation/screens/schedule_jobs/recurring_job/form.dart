@@ -244,7 +244,7 @@ class _CronJobFormState extends State<CronJobForm> {
     final theme = Theme.of(context);
 
     return IosScaffold(
-      title: '${widget.jobToEdit == null ? 'New' : 'Update'} Cron Job',
+      title: '${widget.jobToEdit == null ? 'New' : '更新'} Cron Job',
       body: Form(
         key: _formKey,
         child: ListView(
@@ -288,7 +288,7 @@ class _CronJobFormState extends State<CronJobForm> {
             TextFormField(
               controller: _descriptionController,
               decoration: const InputDecoration(
-                labelText: 'Description',
+                labelText: '描述',
                 border: OutlineInputBorder(),
               ),
               validator: (value) {
@@ -390,7 +390,7 @@ class _CronJobFormState extends State<CronJobForm> {
                 CircularProgressIndicator(color: theme.colorScheme.surface),
                 const SizedBox(width: 5),
                 Text(
-                  '${_isEditMode ? 'Update' : 'Schedule'} Job',
+                  '${_isEditMode ? '更新' : 'Schedule'} Job',
                   style: theme.textTheme.titleMedium,
                 ),
             ],

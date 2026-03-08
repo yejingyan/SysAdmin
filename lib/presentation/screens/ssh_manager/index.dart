@@ -117,7 +117,7 @@ class _SSHManagerScreenState extends ConsumerState<SSHManagerScreen> {
     final connectionsAsync = ref.watch(sshConnectionsProvider);
 
     return IosScaffold(
-      title: "SSH Manager",
+      title: "SSH管理",
       body: RefreshIndicator(
         onRefresh: _onRefresh,
         child: connectionsAsync.when(
@@ -198,7 +198,7 @@ class _SSHManagerScreenState extends ConsumerState<SSHManagerScreen> {
             await loadConnections();
           }
         },
-        tooltip: "Add Connection",
+        tooltip: "添加连接",
         elevation: 4.0,
         child: const Icon(Icons.add),
       ),

@@ -57,7 +57,7 @@ class _DeferredJobScreenState extends State<DeferredJobScreen> {
     return showDialog<bool> (
         context: context,
         builder: (context) => DeleteConfirmationDialog(
-            title: "Delete Job?",
+            title: "删除任务?",
             content: Text('Are you sure you want to delete "Job #${job.id}" scheduled at "${job.executionTime}"?')
         ),
     );

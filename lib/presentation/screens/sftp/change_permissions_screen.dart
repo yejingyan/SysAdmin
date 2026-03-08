@@ -124,14 +124,14 @@ class _ChangePermissionScreenState extends State<ChangePermissionScreen> {
   @override
   Widget build(BuildContext context) {
     return IosScaffold(
-      title: "Permissions",
+      title: "权限",
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
           : ListView(
               padding: const EdgeInsets.all(16),
               children: [
                 // Permission checkboxes
-                _buildPermissionSection('Owner', [
+                _buildPermissionSection('所有者', [
                   (
                     'R',
                     _permissions.ownerRead,
@@ -148,7 +148,7 @@ class _ChangePermissionScreenState extends State<ChangePermissionScreen> {
                     (value) => setState(() => _permissions.ownerExecute = value!)
                   ),
                 ]),
-                _buildPermissionSection('Group', [
+                _buildPermissionSection('用户组', [
                   (
                     'R',
                     _permissions.groupRead,
@@ -240,7 +240,7 @@ class _ChangePermissionScreenState extends State<ChangePermissionScreen> {
 
                 // Owner selection
                 ListTile(
-                  title: const Text('Owner'),
+                  title: const Text('所有者'),
                   subtitle: Text(_currentOwner),
                   trailing: ElevatedButton(
                     onPressed: _showUserList,
@@ -250,7 +250,7 @@ class _ChangePermissionScreenState extends State<ChangePermissionScreen> {
 
                 // Group selection
                 ListTile(
-                  title: const Text('Group'),
+                  title: const Text('用户组'),
                   subtitle: Text(_currentGroup),
                   trailing: ElevatedButton(
                     onPressed: _showGroupList,

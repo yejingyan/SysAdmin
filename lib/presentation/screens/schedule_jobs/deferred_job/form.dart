@@ -132,7 +132,7 @@ class _AtJobFormState extends State<AtJobForm> {
         leading: CupertinoNavigationBarBackButton(
           onPressed: () => Navigator.pop(context),
         ),
-        title: Text('${_isEditing ? 'Update' : 'Schedule'} AT Job'),
+        title: Text('${_isEditing ? '更新' : 'Schedule'} AT Job'),
       ),
 
       body: Form(

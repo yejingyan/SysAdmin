@@ -411,7 +411,7 @@ class SudoSessionNotifier extends StateNotifier<SudoSessionState> {
                     keyboardType: TextInputType.visiblePassword,
                     autofocus: true,
                     decoration: InputDecoration(
-                        labelText: "Password",
+                        labelText: "密码",
                         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
                         suffixIcon: IconButton(
                             onPressed: () => setState(() {
@@ -439,14 +439,14 @@ class SudoSessionNotifier extends StateNotifier<SudoSessionState> {
                 password = null;
                 Navigator.pop(context);
               },
-              child: const Text("Cancel"),
+              child: const Text("取消"),
             ),
             TextButton(
               onPressed: () {
                 password = passwordController.text.trim();
                 Navigator.pop(context);
               },
-              child: const Text("Confirm"),
+              child: const Text("确认"),
             )
           ],
         ),

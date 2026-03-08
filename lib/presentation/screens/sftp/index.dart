@@ -210,16 +210,16 @@ class _SftpExplorerScreenState extends State<SftpExplorerScreen> with TickerProv
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Confirm Delete'),
+        title: const Text('确认删除'),
         content: Text('Are you sure you want to delete ${_selectedFiles.length} item(s)?'),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context, false),
-            child: const Text('Cancel'),
+            child: const Text('取消'),
           ),
           TextButton(
             onPressed: () => Navigator.pop(context, true),
-            child: const Text('Delete'),
+            child: const Text('删除'),
           ),
         ],
       ),
@@ -415,7 +415,7 @@ class _SftpExplorerScreenState extends State<SftpExplorerScreen> with TickerProv
     return showDialog<String>(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Rename'),
+        title: const Text('重命名'),
         content: TextField(
           controller: controller,
           decoration: const InputDecoration(
@@ -426,11 +426,11 @@ class _SftpExplorerScreenState extends State<SftpExplorerScreen> with TickerProv
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('Cancel'),
+            child: const Text('取消'),
           ),
           TextButton(
             onPressed: () => Navigator.pop(context, controller.text),
-            child: const Text('Rename'),
+            child: const Text('重命名'),
           ),
         ],
       ),
@@ -443,7 +443,7 @@ class _SftpExplorerScreenState extends State<SftpExplorerScreen> with TickerProv
     return showDialog<String>(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Create file'),
+        title: const Text('创建文件'),
         content: TextField(
           controller: controller,
           decoration: const InputDecoration(
@@ -454,11 +454,11 @@ class _SftpExplorerScreenState extends State<SftpExplorerScreen> with TickerProv
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('Cancel'),
+            child: const Text('取消'),
           ),
           TextButton(
             onPressed: () => Navigator.pop(context, controller.text),
-            child: const Text('Create'),
+            child: const Text('创建'),
           ),
         ],
       ),
@@ -470,7 +470,7 @@ class _SftpExplorerScreenState extends State<SftpExplorerScreen> with TickerProv
     return showDialog<String>(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Create Folder'),
+        title: const Text('创建文件夹'),
         content: TextField(
           controller: controller,
           decoration: const InputDecoration(
@@ -481,11 +481,11 @@ class _SftpExplorerScreenState extends State<SftpExplorerScreen> with TickerProv
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('Cancel'),
+            child: const Text('取消'),
           ),
           TextButton(
             onPressed: () => Navigator.pop(context, controller.text),
-            child: const Text('Create'),
+            child: const Text('创建'),
           ),
         ],
       ),
@@ -646,7 +646,7 @@ class _SftpExplorerScreenState extends State<SftpExplorerScreen> with TickerProv
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     //  Label
-                    Text('Create file', style: Theme.of(context).textTheme.labelLarge),
+                    Text('创建文件', style: Theme.of(context).textTheme.labelLarge),
 
                     const SizedBox(width: 12),
 
@@ -655,7 +655,7 @@ class _SftpExplorerScreenState extends State<SftpExplorerScreen> with TickerProv
                       heroTag: 'createFileBtn',
                       onPressed: _handleCreateFile,
                       shape: const CircleBorder(),
-                      tooltip: "Create file",
+                      tooltip: "创建文件",
                       enableFeedback: true,
                       child: const Icon(Icons.file_copy_outlined),
                     ),
@@ -688,7 +688,7 @@ class _SftpExplorerScreenState extends State<SftpExplorerScreen> with TickerProv
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     //  Label
-                    Text('Upload', style: Theme.of(context).textTheme.labelLarge),
+                    Text('上传', style: Theme.of(context).textTheme.labelLarge),
 
                     const SizedBox(width: 12),
 

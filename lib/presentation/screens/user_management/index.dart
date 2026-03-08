@@ -182,7 +182,7 @@ class _UserManagementScreenState extends ConsumerState<UserManagementScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Sort',
+                      '排序',
                       style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
@@ -205,7 +205,7 @@ class _UserManagementScreenState extends ConsumerState<UserManagementScreen> {
               ),
 
               // Sort options
-              _buildSortOption('Username', SortField.username, Icons.abc),
+              _buildSortOption('用户名', SortField.username, Icons.abc),
               _buildSortOption('User ID', SortField.uid, Icons.tag),
               _buildSortOption('Group ID', SortField.gid, Icons.group),
               _buildSortOption('Comment', SortField.comment, Icons.comment),
@@ -343,16 +343,16 @@ class _UserManagementScreenState extends ConsumerState<UserManagementScreen> {
               TableData(
                   heading: "User Information",
                   rows: <TableRowData> [
-                    TableRowData(label: "Username", value: user.username),
+                    TableRowData(label: "用户名", value: user.username),
                     TableRowData(label: "Comment", value: user.comment.isNotEmpty ? user.comment : "N/A"),
-                    TableRowData(label: "UID", value: user.uid.toString()),
-                    TableRowData(label: "GID", value: user.gid.toString()),
+                    TableRowData(label: "用户ID", value: user.uid.toString()),
+                    TableRowData(label: "组ID", value: user.gid.toString()),
                   ]
               ),
               TableData(
                   heading: "System Path",
                   rows: <TableRowData> [
-                    TableRowData(label: "Home Directory", value: user.homeDirectory),
+                    TableRowData(label: "主目录", value: user.homeDirectory),
                     TableRowData(label: "Shell", value: user.shell),
                   ]
               ),
@@ -526,7 +526,7 @@ class _UserManagementScreenState extends ConsumerState<UserManagementScreen> {
           ),
           const SizedBox(width: 6),
           Text(
-            'Sort',
+            '排序',
             style: TextStyle(
               color: hasActiveSort ? theme.colorScheme.onPrimary : theme.colorScheme.inverseSurface,
               fontWeight: hasActiveSort ? FontWeight.w600 : FontWeight.normal,

@@ -109,13 +109,13 @@ class AppDrawer extends ConsumerWidget {
                   children: <Widget>[
                     // System section
                     buildDrawerHeading("System"),
-                    buildDrawerItem(context, Icons.monitor_rounded, 'System Monitor',
+                    buildDrawerItem(context, Icons.monitor_rounded, '系统监控',
                        () => navigateTo(context, const SystemResourceDetailsScreen()),
                     ),
                     buildDrawerItem(context, Icons.person_outline_rounded, 'User Management',
                       () => navigateTo(context, const UserManagementScreen())
                     ),
-                    buildDrawerItem(context, Icons.manage_accounts_outlined, 'SSH Manager',
+                    buildDrawerItem(context, Icons.manage_accounts_outlined, 'SSH管理',
                       () => navigateTo(context, const SSHManagerScreen()),
                     ),
                     buildDrawerItem(context, Icons.folder_open_rounded, 'File Explorer',
@@ -141,7 +141,7 @@ class AppDrawer extends ConsumerWidget {
                     buildDrawerItem(
                       context,
                       Icons.terminal_outlined,
-                      'Terminal',
+                      '终端',
                       () {
                         if (defaultConnection != null) {
                           Navigator.push(
@@ -166,7 +166,7 @@ class AppDrawer extends ConsumerWidget {
 
                     // Miscellaneous section
                     buildDrawerHeading("Miscellaneous"),
-                    buildDrawerItem(context, Icons.schedule, 'Schedule Jobs', () {
+                    buildDrawerItem(context, Icons.schedule, '计划任务', () {
                       if (defaultConnection != null) {
                         Navigator.push(
                           context,
@@ -185,7 +185,7 @@ class AppDrawer extends ConsumerWidget {
 
                     // About section
                     buildDrawerHeading("More"),
-                    buildDrawerItem(context, Icons.info_outline_rounded, "About", () => navigateTo(context, const AboutScreen())),
+                    buildDrawerItem(context, Icons.info_outline_rounded, "关于", () => navigateTo(context, const AboutScreen())),
                   ],
                 ),
               ),

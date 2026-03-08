@@ -67,7 +67,7 @@ class _SimpleSchedulePickerState extends State<SimpleSchedulePicker> {
             // Show time picker for daily/weekly/monthly
             if (_frequency != 'minute' && _frequency != 'hourly')
               ListTile(
-                title: const Text('Time'),
+                title: const Text('时间'),
                 trailing: Text(_time.format(context)),
                 onTap: () async {
                   final TimeOfDay? picked = await showTimePicker(

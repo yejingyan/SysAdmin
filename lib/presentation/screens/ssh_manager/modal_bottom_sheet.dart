@@ -226,7 +226,7 @@ class _SSHConnectionDetailsSheetState extends State<SSHConnectionDetailsSheet> {
                           // Default connection toggle
                           SwitchListTile(
                             // contentPadding: const EdgeInsets.symmetric(horizontal: 50),
-                            title: Text('Set as Default Connection', style: theme.textTheme.labelLarge),
+                            title: Text('设为默认连接', style: theme.textTheme.labelLarge),
                             value: currentConnection.isDefault,
                             onChanged: (bool value) {
                               Navigator.pop(context);
@@ -271,10 +271,10 @@ class _SSHConnectionDetailsSheetState extends State<SSHConnectionDetailsSheet> {
                             defaultVerticalAlignment: TableCellVerticalAlignment.middle,
                             children: <TableRow> [
                               buildRow("Created At", widget.connection.createdAt, alternate: true),
-                              buildRow("Username", widget.connection.username, alternate: false),
-                              buildRow("Host", widget.connection.host, alternate: true),
-                              buildRow("Port", widget.connection.port.toString(), alternate: false),
-                              buildRow("Authentication", widget.connection.password != null ? "Password" : "Private Key", alternate: true),
+                              buildRow("用户名", widget.connection.username, alternate: false),
+                              buildRow("主机", widget.connection.host, alternate: true),
+                              buildRow("端口", widget.connection.port.toString(), alternate: false),
+                              buildRow("Authentication", widget.connection.password != null ? "密码" : "Private Key", alternate: true),
                             ],
                           ),
                         ],
@@ -287,7 +287,7 @@ class _SSHConnectionDetailsSheetState extends State<SSHConnectionDetailsSheet> {
                     _buildDetailSection('Quick Actions', [
                       _buildActionButton(
                         icon: Icons.terminal,
-                        title: 'Open Terminal',
+                        title: '打开终端',
                         onTap: () => Navigator.push(
                           context,
                           CupertinoPageRoute(builder: (context) => const TerminalScreen())
@@ -295,7 +295,7 @@ class _SSHConnectionDetailsSheetState extends State<SSHConnectionDetailsSheet> {
                       ),
                       _buildActionButton(
                         icon: Icons.folder_open_rounded,
-                        title: 'File Manager',
+                        title: '文件管理器',
                         onTap: () => Navigator.push(
                           context,
                           CupertinoPageRoute(builder: (context) => SftpExplorerScreen(connection: currentConnection))
@@ -303,7 +303,7 @@ class _SSHConnectionDetailsSheetState extends State<SSHConnectionDetailsSheet> {
                       ),
                       _buildActionButton(
                         icon: Icons.monitor,
-                        title: 'System Monitor',
+                        title: '系统监控',
                         onTap: () {
                           // TODO: Implement system monitor logic
                         },

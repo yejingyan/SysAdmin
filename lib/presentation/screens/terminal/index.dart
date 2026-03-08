@@ -391,7 +391,7 @@ class _TerminalScreenState extends ConsumerState<TerminalScreen> {
                 value: 'clear',
                 child: ListTile(
                   leading: Icon(Icons.clear_all_outlined, color: CupertinoColors.systemGrey),
-                  title: Text('Clear Terminal'),
+                  title: Text('清除终端'),
                 ),
               ),
 
@@ -399,7 +399,7 @@ class _TerminalScreenState extends ConsumerState<TerminalScreen> {
                 value: 'reconnect',
                 child: ListTile(
                   leading: Icon(Icons.refresh, color: CupertinoColors.systemGrey),
-                  title: Text('Reconnect'),
+                  title: Text('重新连接'),
                 ),
               ),
 
@@ -410,7 +410,7 @@ class _TerminalScreenState extends ConsumerState<TerminalScreen> {
                       _showShortcutBar ? Icons.keyboard_hide : Icons.keyboard,
                       color: CupertinoColors.systemGrey
                   ),
-                  title: Text(_showShortcutBar ? 'Hide Shortcuts' : 'Show Shortcuts'),
+                  title: Text(_showShortcutBar ? '隐藏快捷键' : '显示快捷键'),
                 ),
               ),
             ],

@@ -39,7 +39,7 @@ class SysAdminMaterialApp extends ConsumerWidget {
         theme: AppTheme.lightTheme,
         darkTheme: AppTheme.darkTheme,
         themeMode: themeMode,
-        title: 'SysAdmin',
+        title: '系统管理员',
         home: SysAdminApp(isOnBoardingDone: isOnBoardingDone),
       ),
       loading: () => const MaterialApp(

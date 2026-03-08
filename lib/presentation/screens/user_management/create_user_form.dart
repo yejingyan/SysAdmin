@@ -169,7 +169,7 @@ class _CreateUserFormState extends ConsumerState<CreateUserForm> {
     final theme = Theme.of(context);
 
     return IosScaffold(
-      title: "${widget.isEditMode ? 'Update' : 'Create'} User",
+      title: "${widget.isEditMode ? '更新' : '创建'} User",
       body: Form(
         key: _formKey,
         child: ListView(
@@ -183,7 +183,7 @@ class _CreateUserFormState extends ConsumerState<CreateUserForm> {
             // Username field
             _buildTextField(
               controller: _usernameController,
-              label: "Username",
+              label: "用户名",
               validator: (value) {
                 if (value == null || value.trim().isEmpty) {
                   return "Username is required";
@@ -256,7 +256,7 @@ class _CreateUserFormState extends ConsumerState<CreateUserForm> {
             if (_createHomeDirectory) ...[
               _buildTextField(
                 controller: _homeDirectoryController,
-                label: "Home Directory",
+                label: "主目录",
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
                     return "Home directory is required";
@@ -312,7 +312,7 @@ class _CreateUserFormState extends ConsumerState<CreateUserForm> {
           child: _isLoading
               ? const CircularProgressIndicator(color: Colors.white)
               : Text(
-                  widget.isEditMode ? "Update" : "Create",
+                  widget.isEditMode ? "更新" : "创建",
                   style: theme.textTheme.labelLarge,
               )
         ),
@@ -329,10 +329,10 @@ class _CreateUserFormState extends ConsumerState<CreateUserForm> {
     return TextFormField(
       controller: controller,
       keyboardType: switch (label) {
-        "Password" || "Confirm Password" => TextInputType.visiblePassword,
+        "密码" || "Confirm Password" => TextInputType.visiblePassword,
         _ => TextInputType.text,
       },
-      autofocus: label == "Username" && !widget.isEditMode,
+      autofocus: label == "用户名" && !widget.isEditMode,
       decoration: InputDecoration(
         labelText: label,
         border: OutlineInputBorder(
